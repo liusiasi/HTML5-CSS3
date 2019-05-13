@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>nthChild</title>
+</head>
+<style type="text/css">
+  ul > li {
+    list-style: none;
+  }
+  ul > li:nth-child(3){
+    background: #f00;
+  }
+  ul > li:nth-child(odd) {
+    background: #ff0;
+  }
+  ul > li:nth-child(3n+1) {
+    background: #abcdab;
+  }
+  ul > li:nth-last-child(2) {
+    background: #f0f;
+  }
+</style>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+  </ul>
+  <hr>
+  <section>
+    <div>2-1</div>
+    <div>2-2</div>
+    <div>2-3</div>
+  </section>
+  <section>
+    <div>3-1</div>
+    <div>3-2</div>
+    <div>3-3</div>
+  </section>
+  <hr>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+  </ul>
+</body>
+</html>

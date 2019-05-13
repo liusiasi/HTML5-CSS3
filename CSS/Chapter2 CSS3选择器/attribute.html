@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Atrribute</title>
+</head>
+<style type="text/css">
+  a[href] {
+    text-decoration: none;
+  }
+  a[href="#"] {
+    color: #f00;
+  }
+  a[class~="two"] {
+    color: #abcdef;
+  }
+  a[href^="#"] {
+    color: #ff0;
+  }
+  a[href$="#"] {
+    color: #0f0;
+  }
+  a[href*="#"] {
+    color: #0ff;
+  }
+  
+
+</style>
+<body>
+  <a href="attribute.html">attribute</a>
+  <a class="one two"href="#">attribute</a>
+  <a class="two three"href="#1">attribute</a>
+  <a href="#2">attribute</a>
+  <a href="#3">attribute</a>
+  <a href="2#">attribute</a>
+  <a href="3#">attribute</a>
+  <a href="#2">attribute</a>
+  <a href="#3">attribute</a>
+  <a href="2#">attribute</a>
+  <a href="3#">attribute</a>
+</body>
+</html>

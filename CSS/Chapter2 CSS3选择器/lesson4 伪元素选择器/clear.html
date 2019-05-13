@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Clear</title>
+</head>
+<style type="text/css">
+  header {
+    background: #abcdef;
+  }
+  header > article {
+    float: left;
+    width: 40%;
+    height: 30px;
+    background: #f00;
+  }
+  header > aside {
+    float: right;
+    width: 40%;
+    height: 50px;
+    background: #ff0;
+  }
+  header::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+</style>
+<body>
+  <header>
+    <article></article>
+    <aside></aside>
+  </header>
+</body>
+</html>

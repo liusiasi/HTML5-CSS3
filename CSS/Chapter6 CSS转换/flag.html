@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		section{
+			width: 300px;
+			height: 200px;
+			background-color: red;
+			margin: 50px auto;
+		}
+		.contain{
+			width: 30px;
+			height: 30px;
+			position: relative;
+		}
+		.star{
+			width: 0;
+			height: 0;
+			border-left: 15px solid transparent;
+			border-right: 15px solid transparent;
+                        border-bottom: 10px solid yellow;
+                        position: relative;
+                        transform: rotate(35deg);
+		}
+		.star::before{
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			border-left: 15px solid transparent;
+			border-right: 15px solid transparent;
+                        border-bottom: 10px solid yellow;
+                        position:absolute;
+                        transform: rotate(70deg);
+                        left: -15px;
+		}
+		.star::after{
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			border-left: 15px solid transparent;
+			border-right: 15px solid transparent;
+                        border-bottom: 10px solid yellow;
+                        position:absolute;
+                        transform: rotate(145deg);
+                        left: -15px;
+		}
+		.contain .small{
+			transform: scale(0.6);
+		}
+ 
+		.contain .big{
+			top: 18px;
+			left: 30px;
+                        transform: rotate(-35deg) scale(2);
+            
+		}
+		.contain .small1{
+			left: 76px;
+			top: 14px;
+		}
+		.contain .small2{
+			left:90px;
+			top: -24px;
+		}
+		.contain .small3{
+			left: 90px;
+			top: -30px;
+		}
+		.contain .small4{
+			left: 78px;
+			top: -37px;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div class="contain">
+			<div class="star small small1"></div>
+		</div>
+		<div class="contain">
+			<div class="star big"></div>
+		</div>
+		<div class="contain">
+			<div class="star small small2"></div>
+		</div>
+		<div class="contain">
+			<div class="star small small3"></div>
+		</div>
+		<div class="contain">
+			<div class="star small small4"></div>
+		</div>
+	</section>
+</body>
+</html>

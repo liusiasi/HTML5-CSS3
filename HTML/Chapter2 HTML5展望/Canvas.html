@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Canvas</title>
+  <style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  canvas {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    background: #abcdef;
+  }
+  </style>
+  <script type="text/javascript">
+  window.onload = function() {
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext('2d');
+    context.moveTo(100,100);
+    context.lineTo(200,200);
+    context.stroke();
+  }
+  </script>
+</head>
+<body>
+  <canvas id="canvas" width="1024" height="700">
+    你的车已经拉不动canvas这样的高级物品了，还是换一台法拉利吧，推荐使用Chrome 浏览器
+  </canvas>
+  
+</body>
+</html>

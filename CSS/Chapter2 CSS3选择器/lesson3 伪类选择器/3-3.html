@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>UI元素状态伪类</title>
+</head>
+<style type="text/css">
+input {
+  width: 200px;
+  height: 30px;
+  border: 1px solid #f00;
+}
+input:disabled {
+  background: #abcdef;
+  border: 1px solid #ff0;
+}
+</style>
+<body>
+  <input type="text" disabled="disabled">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+  
+</body>
+</html>
