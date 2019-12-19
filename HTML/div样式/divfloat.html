@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+ 
+<head>
+    <meta charset=utf-8 />
+    <title>UFO来了</title>
+    <script>
+        window.onload = function() {
+            var i = 10;
+            var j = 0;
+            var e = target;
+            var win = document.documentElement || document.body;
+ 
+            function intern() {
+                var width = e.clientWidth;
+                var height = e.clientHeight;
+                var left = parseFloat(e.style.left);
+                var top = parseFloat(e.style.top);
+                var windowWidth = win.clientWidth;
+                var windowHeight = win.clientHeight;
+                if (windowWidth - width < (left + i)) {
+                    i = -i;
+                } else if ((left + i) < 0) {
+                    i = -i;
+                }
+                if (windowHeight - height < (top + j)) {
+                    j = -j;
+                } else if ((top + j) < 0) {
+                    j = -j;
+                }
+                e.style.left = left + i + "px";
+                e.style.top = top + j + "px";
+            }
+            setInterval(intern, 30);
+        };
+    </script>
+</head>
+ 
+<body>
+    <div id="target" style="border-radius:90px;background-color: red; width: 30px; height: 30px; position: absolute; top:100px; left: 0px;"></div>
+</body>
+ 
+</html>
