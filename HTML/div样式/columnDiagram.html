@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>柱状图</title>
+        <!-- <style type="text/css">
+            #container{
+                display: flex;                  /*弹性盒模型容器*/
+                display: -webkit-flex;          
+                justify-content: space-around;  /*剩余空白空间平均分配,环绕子元素*/
+                align-items: flex-end;          /*子元素对齐底部*/
+                width: 320px;
+                height: 300px;
+                border-left: 1px solid black;
+                border-bottom: 1px solid gray;
+            }
+            .rect{
+                width: 50px;
+            }
+            .rect1{
+                height:30%;
+                background-color: #f00;
+            }
+            .rect2{
+                height:80%;
+                background-color: #ddd;
+            }
+            .rect3{
+                height:70%;
+                background-color: #0fd;
+            }
+            .rect4{
+                height:60%;
+                background-color: #ff0;
+            }
+            .rect5{
+                height:90%;
+                background-color: #234;
+            }
+        </style> -->
+
+        <style type="text/css">
+            /* 注意margin的标准是以父容器宽度为标准的 */
+            #container{
+                width: 300px;
+                height: 300px;
+                border-left: 1px solid black;
+                border-bottom: 1px solid gray;
+            }
+            .rect{
+                float: left;
+                width: 50px;
+                margin-left: 10px;
+            }
+            .rect1{
+                height:30%;
+                margin-top: 70%;
+                background-color: #f00;
+            }
+            .rect2{
+                height:80%;
+                margin-top: 20%;
+                background-color: #ddd;
+            }
+            .rect3{
+                height:70%;
+                margin-top: 30%;
+                background-color: #0fd;
+            }
+            .rect4{
+                height:60%;
+                margin-top: 40%;
+                background-color: #ff0;
+            }
+            .rect5{
+                height:90%;
+                margin-top: 10%;
+                background-color: #234;
+            }
+        </style>
+
+        <!-- <style type="text/css">
+            #container{
+                width: 320px;
+                height: 300px;
+                border-left: 1px solid black;
+                border-bottom: 1px solid gray;
+                position: relative;
+            }
+            .rect { 
+                width: 50px;
+            }
+            .rect1{
+                position: absolute;
+                left:0;
+                bottom: 0;
+                height: 30%;
+                background-color: #f00;
+            }
+            .rect2{
+                position: absolute;
+                left:60px;
+                bottom: 0;
+                height: 80%;
+                background-color: #ddd;
+            }
+            .rect3{
+                position: absolute;
+                left:120px;
+                bottom: 0;
+                height: 70%;
+                background-color: #0fd;
+            }
+            .rect4{
+                position: absolute;
+                left:180px;
+                bottom: 0;
+                height: 60%;
+                background-color: #ff0;
+            }
+            .rect5{
+                position: absolute;
+                left:240px;
+                bottom: 0;
+                height: 90%;
+                background-color: #243;
+            }
+            
+        </style> -->
+    </head>
+    <body>
+        <div id="container">
+            <div class="rect rect1"></div>
+            <div class="rect rect2"></div>
+            <div class="rect rect3"></div>
+            <div class="rect rect4"></div>
+            <div class="rect rect5"></div>
+        </div>
+    </body>
+</html>

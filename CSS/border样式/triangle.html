@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta>
+        <title>三角形</title>
+        <style type="text/css">
+            .target {
+                width: 0px;
+                height: 0px;
+                border-top: salmon 50px solid ;
+                border-bottom: transparent 50px solid;
+                border-left: transparent 50px solid;
+                border-right: transparent 50px solid;
+            }
+            .target1{
+                width: 0;
+                height: 0;
+                border-top: salmon 50px solid ;
+                border-right: transparent 50px solid;
+                border-left: transparent 50px solid;
+            }
+            .target2{
+                margin: 10px;
+                width: 0;
+                height: 0;
+                border-width: 30px 30px 0 0;
+                border-style: solid;
+                border-color: salmon transparent transparent transparent;
+            }
+            h1{
+                color:red;
+            }
+            h1 strong{
+                color: turquoise;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 利用重叠的border各占一半的特性 ，边框交界处，一边占用一半。向下-->
+        <div class="target"></div>
+        <!-- 虽然只显示一个三角，但是依然占用空间，我们可以不设置下边框，节省空间。向下-->
+        <div class="target1"></div>
+        <!-- 向左上-->
+        <div class="target2"></div>
+        <h1>测试css<strong>继承</strong>效果</h1>
+
+    </body>
+</html>

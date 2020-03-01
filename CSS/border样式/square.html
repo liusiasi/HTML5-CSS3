@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    .square{
+        width: 20%;
+        height:  20vw;
+    }
+    .square1{
+        width: 100%;
+        padding-bottom : 100%;
+    }
+    .wrapper {
+        width: 100px;
+        height: 100px;
+    }
+    .square2 {
+        width: 30%;
+        background: #ccc;
+        position: relative;
+    }
+    .square2::before{
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+
+</style>
+<body>
+    <div class="square"></div>
+    <div class="wrapper">
+        <div class="square1"></div>
+    </div>
+    <div class="square2"></div>
+
+</body>
+</html>

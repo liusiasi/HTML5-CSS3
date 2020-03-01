@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    .popup{
+        width: 100px;
+        background-color: yellow;
+        border: 1px solid black;
+        border-radius: 4px;
+        position: relative;
+        margin: 0 auto;
+        padding: 10px 20px;
+    }
+    .popup::before {
+        position: absolute;
+        content:'';
+        border-width: 10px 10px 0;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+        width: 0px;
+        height: 0px;
+        left: 50%;
+        top: 100%;
+        margin-left: -10px;
+
+    }
+    .popup::after {
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        content:'';
+        border-width: 10px 10px 0;
+        border-style: solid;
+        border-color: yellow transparent transparent transparent;
+        left: 50%;
+        top: 100%;
+        margin-top: -1px;
+        margin-left: -10px;
+
+
+    }
+</style>
+<body>
+    <!-- 思路就是先设置一个div，内部填充内容，设置一定的padding，然后定义伪类元素after和before两个三角想，
+    最后绝对定位到居中和下边界的位置。相对的起始点是div左上角 -->
+    <div class="popup">
+        纯CSS写带边框的三角形
+    </div>
+</body>
+</html>

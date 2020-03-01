@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+
+        .test_triangle_border {
+            width: 200px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .test_triangle_border .popup {
+            width: 100px;
+            background: #99FF99;
+            padding: 10px 20px;
+            color: #333;
+            border-radius: 4px;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            border: 1px solid #333;
+        }
+
+        .test_triangle_border .popup::before {
+            content: '';
+            width: 0px;
+            height: 0px;
+            border-width: 0 10px 10px;
+            border-style: solid;
+            border-color: transparent transparent #333;
+            left: 50%;
+            top: -10px;
+            position: absolute;
+            margin-left: -10px;
+        }
+
+        .test_triangle_border .popup::after {
+            content: '';
+            width: 0px;
+            height: 0px;
+            border-width: 0 10px 10px;
+            border-style: solid;
+            border-color: transparent transparent #99FF99;
+            left: 50%;
+            top: -9px;
+            position: absolute;
+            margin-left: -10px;
+        }
+
+</style>
+<body>
+    <div class="test_triangle_border">
+        <div class="popup">
+            纯CSS写带边框的三角形
+        </div>
+    </div>
+</body>
+</html>
