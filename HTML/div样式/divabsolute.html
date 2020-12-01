@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+.parent {
+    height: 200px;
+    width: 300px;
+    position: relative;
+    background-color: chartreuse;
+
+}
+.child{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    display: flex !important;
+    justify-content: center;
+    margin-right: 15%;
+    margin-left: 15%;
+    padding-right: 0;
+    list-style: none;
+    background-color: chocolate;
+    padding: 0;
+}
+.child li{
+   
+
+}
+</style>
+<body>
+    <div class="parent">
+        <ul class="child"><li>ha</li><li>ha</li><li>ha</li></ul>
+    </div>
+</body>
+</html>

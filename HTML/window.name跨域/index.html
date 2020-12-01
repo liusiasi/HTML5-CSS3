@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script>
+    //http://localhost:8081/test1.html
+    var iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    document.appendChild(iframe);
+    //每次执行location的时候都会重新onload
+    var flag = 0;
+    var loadData= function() {
+        if(flag == 1){
+            iframe.contentWindow.close();
+        }else if(flag == 0){
+            iframe.contentWindow.location = 'http://localhost:8081/proxy.html';
+            flag = 1;
+        }
+    }
+    iframe.src = 'http://localhost:8080/test2.html';
+    if(iframe.attachEvent){
+        iframe.attachEvent('onload',loadData);
+    }else{
+        iframe.onload = loadData;
+
+    }
+
+
+</script>
+<body>
+
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Page2</title>
+    </head>
+    <script>
+        //http://localhost:8080/test2.html
+        var data = {
+            name : 'liusiqi',
+            age : 23,
+            school: 'beiyou',
+        }
+        window.name = JSON.springify(data);
+    </script>
+
+    <body>
+        
+    </body>
+</html>

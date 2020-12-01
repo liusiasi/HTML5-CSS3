@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>左侧固定右侧自适应</title>
+        <meta charset="utf-8">
+        <style>
+            .father{
+               width: 100%;
+               height: 300px;
+               background-color: yellow;    
+               position: relative;
+            }
+            .left{ 
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 200px;
+              height: 80%;   
+              background-color: red;
+            }
+            .right{  
+              width: 100%;
+              height: 100%;   
+              background-color: lightblue;
+              margin-left: 200px;
+            } 
+           </style>
+    </head>
+   
+    <body>
+     <!--左侧元素脱离文档流 固定宽度，右侧元素设置百分比 则会随着屏幕宽度变化而变化  -->
+      <div class="father">
+        <div class="right"></div>
+        <div class="left"></div>
+      </div>
+    </body>
+    
+    
+</html>

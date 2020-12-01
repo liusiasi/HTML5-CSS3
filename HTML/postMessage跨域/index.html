@@ -1,0 +1,28 @@
+<!-- b页面-->
+<body>
+    <iframe src="http://location:8081/b.htm" frameborder="0" id="child"></iframe>
+</body>
+<script>
+    window.onload = function(){
+        document.getElementById('child').contentWindow
+        .postMessage('主页面消息，‘http://location:8080');
+    }
+
+    /*e.data ; e.orgin ; e.source;发送窗口的源和对象引用
+    */
+    window.addEventListener('message',function(e){
+        if(e.origin != 'http://location:8080') return;
+        
+    })
+    
+
+
+</script>
+
+<!-- b页面-->
+<script>
+    window.addEventListener('message',function(e){
+        if(window.parent != e.source) return;
+        top.postMessage('这是子页面信息',e.origin);
+    })
+</script>

@@ -1,0 +1,13 @@
+@import url(./test.css);
+
+.child{
+    width: 100px;
+    height: 100px;
+    background-color: crimson;
+    float: left;
+}
+.parent{
+    width: 300px;
+    background-color: cyan;
+    display:inline-block ;
+}

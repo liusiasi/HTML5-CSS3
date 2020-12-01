@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            height: 500px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        .left {
+            flex-basis: 200px;
+            height: 80%;
+            background-color:blue;
+            order: -1;
+
+        }
+        .right {
+            flex-basis: 100px;
+            height: 80%;
+            background-color: red;
+        }
+        .middle {
+            flex-grow: 1;
+            height: 10%;
+            background-color: darkorange;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <!-- 使用这种方式也不能优先渲染中间区域-->
+
+        <div class="middle">middle</div>
+        <div class="left"></div>
+        <div class="right"></div>
+
+
+
+     </div>
+</body>
+</html>

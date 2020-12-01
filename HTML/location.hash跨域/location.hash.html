@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Location.Hash</title>
+    </head>
+    <script>
+        //location:8080/a.html
+        var iframe = document.createElement('iframe');
+        iframe.style.display='none';
+        iframe.src = "location:8081/b.html#paramdo";
+        document.appendChild(iframe);
+        setInterval(function(){
+            if(location.hash) console.log(location.hash.substring(1));
+        },1000)
+    </script>
+    <body>
+        
+    </body>
+
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Location.Hash</title>
+    </head>
+    <script>
+        //location:8081/b.html
+        switch(location.hash){
+            case '#paramdo':
+                callback();
+            case 'paramset':
+                setparam();
+        }
+
+        var data = {
+            name : 'liusiqi',
+            age: 18,
+            school: '北邮',
+        }
+        var callback = function(){
+            try{
+                parent.location.hash = `#${JSON.stringify(data)}`;
+            }catch(e){
+                var iframe = document.createElement('iframe');
+                iframe.src = `location:8080/c.html#${JSON.stringify(data)}`
+                iframe.style.display = 'none';
+            }
+                
+        }
+
+    </script>
+    <body>
+        
+    </body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    parent.parent.location.hash = self.location.hash;
+</script>
+<body>
+    
+</body>
+</html>

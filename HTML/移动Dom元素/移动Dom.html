@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mylist">
+    <div class="hh">11</div>
+    <div class="mm">22</div>
+
+    <div>33</div>
+    <div class="jj">44</div>
+    </div>
+    <script>
+        var hh  = document.getElementsByClassName('hh')[0];
+        var jj = document.getElementsByClassName('jj')[0];
+        console.log(jj);
+        document.getElementById('mylist').replaceChild(jj,hh);
+    </script>
+
+</body>
+</html>

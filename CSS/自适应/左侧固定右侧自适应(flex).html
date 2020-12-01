@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> 
+  <style>
+   .father{
+      width: 100%;
+      height: 500px;
+      background-color: lightblue;
+      display: flex;
+      flex-direction: row;
+   }
+   .left{
+      flex-basis: 300px;
+      height: 90%;
+      background-color: rgb(175, 175, 49);
+     }
+     .right{
+      flex: 1;
+      background-color: lightgreen;
+     } 
+  
+  </style>
+</head>
+<body>
+    <!-- flex弹性布局 flex设置为1 相当于flex grow的值(相对于其他元素进行扩展) flex-shrink取值为1(代表收缩因子，通过计算超出的总量和收缩比例求的) flex-basis 0%-->
+  <div class="father">
+     <div class="left">left</div>
+     <div class="right">right</div>
+
+  </div>
+</body>
+</html>

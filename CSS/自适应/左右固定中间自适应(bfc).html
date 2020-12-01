@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            height: 500px;
+            width: 100%;
+        }
+        .left {
+            float: left;
+            width: 200px;
+            height: 80%;
+            background-color: forestgreen;
+        }
+        .right {
+            float: right;
+            width: 200px;
+            height: 80%;
+            background-color: red;
+        }
+        .middle {
+            overflow: hidden;
+            height: 80%;
+            background-color: rosybrown;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+
+        <!-- 首先将元素浮动，然后在触发BFC 但是这种情况不能最先渲染中间区域-->
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="middle"></div>
+     </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>垂直居中</title>
+</head>
+<style>
+    .parent{
+        width: 1000px;
+        height: 1000px;
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid #ccc;
+        line-height: 1000px;
+    }
+    .child {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #ccc;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    span {
+        font-size: 40px;
+        vertical-align: middle;
+    }
+</style>
+<body>
+    <div class="parent">
+        <span >hh1</span>
+
+        <div class="child"> </div>
+
+    </div>
+</body>
+</html>

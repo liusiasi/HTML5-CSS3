@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+        }
+        .father{
+            padding: 0px 200px 0px 150px;
+        }
+        .father div{
+            float: left;
+            /* 这里为什么使用 relative 因为 float 已经脱离文档流了如果在审设置 absolute 会使 float 失效。相对于父元素的位置偏移*/
+            position: relative;
+        }
+        .right {
+            height: 20px;
+            width: 200px;
+            margin-left: -200px;
+            background-color: salmon;
+            right: -200px;
+
+        }
+        .left {
+            height: 100px;
+            width: 150px;
+            margin-left: -100%;
+            left:-150px;
+            background-color: royalblue;
+        }
+        .main {
+            height: 200px;
+            width: 100%;
+            background-color: seagreen;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <!--1.满足要求 中间自适应 两边固定宽度 2.最先渲染中间内容 -->
+        <div class="main">main</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+
+</body>
+</html>

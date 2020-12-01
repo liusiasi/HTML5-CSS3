@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>轮播图</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .swiper {
+      position: relative;
+      width: 1500px;
+      height: 200px;
+    }
+
+    .swiper .swiper-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 100%;
+      float: left;
+      box-sizing: border-box;
+      background: #efefef;
+      border: 1px solid #333;
+    }
+
+    .swiper .swiper-item:nth-child(2n) {
+      background: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="swiper">
+      <div class="swiper-item">1</div>
+      <div class="swiper-item">2</div>
+      <div class="swiper-item">3</div>
+      <div class="swiper-item">4</div>
+      <div class="swiper-item">5</div>
+    </div>
+  </div>
+  <script>
+    class SliderBox {
+      /**
+       * 构造器
+       * @param {number} delay 切换延时
+       */
+      constructor(delay = 1000) {
+        this.swiper = document.querySelector('.swiper') // 轮播图
+        this.swiperItemList = document.querySelectorAll('.swiper-item') // 轮播项
+        this.totalLength = this.swiperItemList.length // 轮播图个数
+        this.delay = delay
+        this.init()
+      }
+      /**
+       * 初始化配置
+       */
+      init() {
+        // 将轮播图第一项克隆, 并放在最后
+        const cloneFirst = document.querySelectorAll('.swiper-item')[0].cloneNode(true)
+        this.swiper.appendChild(cloneFirst)
+        // 因为 totalLength 是原始的轮播图个数, 所以可以正确定位到原来的轮播图最后一个
+        const cloneLast = document.querySelectorAll('.swiper-item')[this.totalLength - 1].cloneNode(true)
+        this.swiper.insertBefore(cloneLast, this.swiper.firstChild)
+        // 设置轮播图总长, 加上新加的两个
+        this.swiper.style.width = (this.totalLength + 2) * 300 + 'px'
+        // 当前轮播图位置分布为  5 12345 1
+        // 初始化轮播图为 1 位置
+        this.currentPosition = 1
+        this.swiper.style.transform = `translateX(${-this.currentPosition * 300}px`
+      }
+      /**
+       * 切换动画
+       */
+      animate() {
+        // 如果正在切换, 则不动
+        if (this.swiper.classList.contains('isAnimating')) return
+        // 如果在第五项, 则将定位改为第 0 项, 并设置位置, 此时没有 transition 动画, 秒切
+        if (this.currentPosition === this.totalLength) {
+          this.currentPosition = 0
+          this.swiper.style.transform = `translateX(${-this.currentPosition * 300}px`
+        }
+        // 将位置设为第一项
+        this.currentPosition++
+        // 轮播
+        setTimeout(() => {
+          this.goSlider()
+        }, 20)
+      }
+      /**
+       * 轮播
+       */
+      goSlider() {
+        // 添加过渡效果, delay 需要一致; 位置偏移一个单位
+        this.swiper.style.transition = `transform ${this.delay / 1000}s ease`
+        this.swiper.style.transform = `translateX(${-this.currentPosition * 300}px`
+        // 添加正在切换的class, 给上面 animate 方法用来判断
+        this.swiper.classList.add('isAnimating')
+        // 切换结束, 清空状态, 清空过渡效果
+        setTimeout(() => {
+          this.swiper.style.transition = ''
+          this.swiper.classList.remove('isAnimating')
+        }, this.delay)
+      }
+      /**
+       * 开始轮播
+       */
+      start() {
+        setInterval(() => this.animate(), this.delay)
+      }
+    }
+  </script>
+  <script>
+    window.onload = function () {
+      const slider = new SliderBox(2000)
+      slider.start()
+    }
+  </script>
+</body>
+
+</html>

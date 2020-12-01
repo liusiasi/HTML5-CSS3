@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>滚动图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        nav {
+            width: 750px;
+            height: 170px;
+            border: 1px solid red;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        
+        ul {
+            width: 200%;
+            height: 100%;
+            animation: picmove 5s linear infinite forwards;
+        }
+        
+        @keyframes picmove {
+            from {
+                transform: translate(0);
+            }
+            to {
+                transform: translate(-750px);
+            }
+        }
+        
+        img {
+            width: 250px;
+            height: 170px;
+            float: left;
+        }
+        
+        ul:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><img src="./g1.jpg" alt=""></li>
+            <li><img src="./g1.jpg" alt=""></li>
+            <li><img src="./g1.jpg" alt=""></li>
+            <li><img src="./g1.jpg" alt=""></li>
+            <li><img src="./g1.jpg" alt=""></li>
+            <li><img src="./g1.jpg" alt=""></li>
+        </ul>
+    </nav>
+</body>
+
+</html>

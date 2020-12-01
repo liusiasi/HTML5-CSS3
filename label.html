@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function Pagination(container, total, current) {
+    this.total = total;
+    this.current = current;
+    this.html = html;
+    this.val = val;
+    this.el = document.createElement('div'); //TODO: 创建分页组件根节点
+    if (!this.el) return;
+
+    this.el.innerHTML = this.html();
+    container.appendChild(this.el);
+    if(this.total <= 1 )this.el.className = 'dispaly:none'; //TODO: 判断是否需要隐藏当前元素
+
+    function html() {
+        if (this.total <= 1) return '';
+        var arr = [this.current];
+        // 构建对称的元素
+        for(let i = 1 ; i <= 5/2 ; i++){
+            left = this.current - i;
+            right = this.current + i;
+            if(left >= 1 && right <= total){
+                arr.push(right);
+                arr.unshift(left);
+            }else{
+                break;
+            }
+        }
+
+        if(arr.length === 5 ) {
+            arr.unshift('首页');
+            arr.push('末页');
+        }
+        // 如果不足则补齐
+        if(arr.length < 5){
+            if(this.total < 5){
+            }
+            else if(arr[0] === 1){
+                // 向后补齐
+                while(arr.length < 5) arr.push(arr[arr.length-1]+1);
+                
+                arr.push('末页')
+                
+            }else{
+                while(arr.length < 5) arr.unshift(arr[0]-1);
+                arr.unshift('首页');
+                // 向前补齐
+            }
+        }
+
+
+        let tmp = "<ul class='pagination'>";
+        for(let i = 0 ; i < arr.length ; i++){
+            if(arr[i] == this.current){
+                tmp+="<li class='current'>"+arr[i]+"</li>"
+
+            }else{
+                tmp+="<li>"+arr[i]+"</li>"
+            }
+        }
+        tmp+="</ul>"
+        return tmp;
+    }
+
+    function val(current) {
+        if (arguments.length === 0) return this.current;
+        if (current < 1 || current > this.total || current === this.current) return;
+        this.current = current;
+        this.el.innerHTML = this.html();
+    };
+}
+window.onload = function(){
+    var container = document.getElementById('jsContainer');
+    Pagination(container, 1, 1);
+}
+
+</script>
+<body>
+    <div id="jsContainer"></div>
+</body>
+</html>
